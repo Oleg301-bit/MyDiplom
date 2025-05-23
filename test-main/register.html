@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css" />
+  </head>
+  <body>
+    <form>
+      <div class="main-container">
+        <fieldset class="flex-conteiner">
+          <legend>Реєстраційна форма</legend>
+
+          <div class="position">
+            <div>
+              <label for="fname">Ім'я</label>
+            </div>
+            <div>
+              <input type="text" id="fname" placeholder="Ім'я" />
+            </div>
+          </div>
+
+          <div class="position">
+            <div>
+              <label for="lname">Прізвище</label>
+            </div>
+            <div>
+              <input type="text" id="lname" placeholder="Прізвище" />
+            </div>
+          </div>
+          <div class="position">
+            <div>
+              <label for="phone">Номер телефону</label>
+            </div>
+            <div>
+              <input type="tel" id="phone" placeholder="+350 XXX XX XX" />
+            </div>
+          </div>
+          <div class="position">
+            <div>
+              <label for="email">Email</label>
+            </div>
+            <div>
+              <input type="email" id="email" placeholder="Email" />
+            </div>
+          </div>
+          <div class="position">
+            <div>
+              <label for="date">Дата народження</label>
+            </div>
+            <div>
+              <input type="datetime-local" id="date" />
+            </div>
+          </div>
+          <div class="position">
+            <div>
+              <label>Гендер</label>
+            </div>
+            <div class="flex-gender">
+              <div>
+                <label for="male">Чоловік</label>
+                <input type="radio" id="male" name="gender" />
+              </div>
+              <div>
+                <label for="female">Жінка</label>
+                <input type="radio" id="female" name="gender" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div>
+          <button>Зареєструватися</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

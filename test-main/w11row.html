@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Характеристики</title>
+    <link rel="stylesheet" href="w11row.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header class="header-contener">
+      <img
+        src="./image_w_kos/lodo.jpg"
+        alt="Зображення логотипу"
+        class="main-logo"
+      />
+      <ul class="menu-list">
+        <a href="diplom.html" class="menu-item">Головна сторінка</a>
+        <li class="menu-item">Чоловіча косметика</li>
+        <li class="menu-item">Косметика для підлітків</li>
+        <li class="menu-item">Лікувальна косметика</li>
+        <li class="menu-item">Контакти</li>
+        <li class="menu-item">Відгуки</li>
+      </ul>
+    </header>
+    <div class="flex-construction">
+      <a href="w-kos.html">
+        <img src="./images/wback.png" alt="back-icon" class="set-icon" />
+      </a>
+      <div>
+        <h1>L'Oreal Paris Color Riche Nude Intense</h1>
+      </div>
+    </div>
+    <div class="set-main-block">
+      <div>
+        <img
+          src="./image_w_kos/lip-stick.jfif"
+          class="set-image"
+          alt="product-image"
+        />
+      </div>
+      <div class="column-description">
+        <button
+          class="button"
+          onclick="toggleDropdown('characteristicsDropdown', 'arrow1')"
+        >
+          Характеристики
+          <span id="arrow1" class="arrow">▼</span>
+        </button>
+
+        <div id="characteristicsDropdown" class="dropdown">
+          <ul>
+            <li>Вік: 18+</li>
+            <li>Бренд: L'Oreal Paris Серія</li>
+            <li>Об'єм: 4.5ml</li>
+            <li>Колекція: color riche</li>
+            <li>Країна ТМ: Франція</li>
+            <li>Зроблено в: Франція</li>
+          </ul>
+        </div>
+
+        <button
+          class="button"
+          onclick="toggleDropdown('descriptionDropdown', 'arrow2')"
+        >
+          Опис
+          <span id="arrow2" class="arrow">▼</span>
+        </button>
+
+        <div id="descriptionDropdown" class="dropdown">
+          <p class="set-text">
+            Плавні лінії, розкішні відтінки, неймовірний дизайн - все це про
+            колекцію L'Oreal Paris Color Riche Nude Intense. Вона розроблена в
+            колаборації з відомим французьким дизайнером, за що може по праву
+            називатися «голлівудською зіркою вашої косметики».
+          </p>
+        </div>
+        <button
+          class="button"
+          onclick="toggleDropdown('usageDropdown', 'arrow3')"
+        >
+          Спосіб застосування
+          <span id="arrow3" class="arrow">▼</span>
+        </button>
+
+        <div id="usageDropdown" class="dropdown">
+          <p class="set-text">
+            Наносити засіб рівномірно на губи. За потреби повторити нанесення
+            протягом дня.
+          </p>
+        </div>
+        <button
+          class="button"
+          onclick="toggleDropdown('ingredientsDropdown', 'arrow4')"
+        >
+          Склад
+          <span id="arrow4" class="arrow">▼</span>
+        </button>
+
+        <div id="ingredientsDropdown" class="dropdown">
+          <p class="set-text">
+            DIMETHICONE HYDROGENATED POLYISOBUTENE POLYETHYLENE TRIMETHYL
+            PENTAPHENYL TRISILOXANE OCTYLDODECYL NEOPENTANOATE SUCROSE ACETATE
+            ISOBUTYRATE STEARYL HEPTANOATE TRIMETHYLSILOXYSILICATE STEARYL
+            CAPRYLATE ARGANIA SPINOSA KERNEL OIL PARAFFIN PENTAERYTHRITYL
+            TETRA-DI-T-BUTYL HYDROXYHYDROCINNAMATE ALUMINA
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="set-button-link">
+        <p class="price">Вартість: 599 грн</p>
+        <button class="buy-product" onclick="location.href='result.html'">
+          Замовити
+        </button>
+
+        <div>
+          <a href="comments.html" class="links">Коментарі наших користувачів</a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer-container">
+      <ul class="footer-item-list">
+        <div class="set-contact-footer">
+          <li class="footer-item" id="contact">Контакти</li>
+          <div>
+            <li class="footer-item">(+380506561234)</li>
+            <li class="footer-item">(+380506561234)</li>
+          </div>
+        </div>
+        <li class="footer-item">Відгуки</li>
+        <li class="footer-item">Останні новини</li>
+      </ul>
+    </footer>
+  </body>
+</html>
