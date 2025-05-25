@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script defer src="dscript.js"></script>
   </head>
   <body>
     <header class="header-contener">
@@ -22,6 +23,9 @@
         <a href="#contact" class="menu-item">Контакти</a>
         <a href="register.html" class="menu-item"
           ><i class="fa-solid fa-user"></i
+        ></a>
+        <a class="menu-item" href="basket.html"
+          ><i class="fa-solid fa-basket-shopping"></i
         ></a>
       </ul>
     </header>
@@ -36,27 +40,44 @@
         </h2>
       </article>
     </section>
+    <div class="search-container">
+      <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Пошук товару..."
+        style="display: none"
+      />
+    </div>
 
     <div class="products-grid">
       <div class="product">
         <a href="w11row.html">
-          <img src="./image_w_kos/lip-stick.jfif" alt="Товар 1" />
+          <img
+            src="./image_w_kos/lip-stick.jfif"
+            alt="Товар 1"
+            class="set-image"
+          />
         </a>
         <p>L'Oreal Paris Color Riche Nude Intense</p>
         <p class="price">566грн</p>
       </div>
       <div class="product">
-        <img src="./image_w_kos/lip-stick.jfif" alt="Товар 1" />
+        <img src="./image_w_kos/Mary-Kay.jpg" alt="Товар 2" class="set-image" />
+        <p>Mary</p>
+        <p class="price">566грн</p>
+      </div>
+      <div class="product">
+        <img
+          src="./image_w_kos/lip-stick2.jfif"
+          alt="Товар 1"
+          class="set-image"
+        />
         <p>L'Oreal Paris Color Riche Nude Intense</p>
         <p class="price">566грн</p>
       </div>
       <div class="product">
-        <img src="./image_w_kos/lip-stick.jfif" alt="Товар 1" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./image_w_kos/lip-stick.jfif" alt="Товар 1" />
+        <img src="./image_w_kos/m-3.jpg" alt="Товар 3" class="set-image" />
         <p>L'Oreal Paris Color Riche Nude Intense</p>
         <p class="price">566грн</p>
       </div>

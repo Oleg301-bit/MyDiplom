@@ -61,6 +61,26 @@ body {
   font-family: 'Great Vibes', cursive;
   padding-top: 20px;
 }
+.search-container {
+  margin: 10px 1250px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+#searchIcon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#searchInput {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -68,7 +88,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  margin-top: 70px;
+  margin-top: 10px;
 }
 
 .product {
