@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Сторінка відгуків</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="vidguk.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
+    <a href="w-kos.html">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
     <section class="main-block">
       <div class="flex-set">
         <div class="column-setting">
@@ -79,5 +83,16 @@
         </p>
       </div>
     </section>
+    <div class="column-button">
+      <button id="add-review-btn">Додати відгук</button>
+
+      <div id="review-form" style="display: none">
+        <textarea
+          id="review-text"
+          placeholder="Напишіть свій відгук..."
+        ></textarea>
+        <button id="save-review-btn">Зберегти</button>
+      </div>
+    </div>
   </body>
 </html>

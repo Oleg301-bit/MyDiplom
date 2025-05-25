@@ -68,7 +68,10 @@ body {
   gap: 10px;
   color: white;
 }
-
+#sortSelect {
+  border-radius: 15px;
+  padding: 10px 15px;
+}
 #searchIcon {
   font-size: 20px;
   cursor: pointer;
