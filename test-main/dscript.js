@@ -1,4 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const container = document.querySelector('.products-grid');
+  let allProducts = [];
+  fetch('http://localhost:5500/api/products')
+    .then((res) => res.json())
+    .then((data) => {
+      allProducts = data;
+      renderProducts(allProducts);
+    })
+    .catch((err) => console.error('Помилка завантаження товарів:', err));
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', filterProducts);
+  });
+
+  function filterProducts() {
+    const selectedCategories = Array.from(checkboxes)
+      .filter((cb) => cb.checked)
+      .map((cb) => cb.id);
+
+    const filtered = selectedCategories.length
+      ? allProducts.filter((product) =>
+          selectedCategories.includes(product.category)
+        )
+      : allProducts;
+
+    renderProducts(filtered);
+  }
+
+  function renderProducts(products) {
+    container.innerHTML = '';
+    products.forEach((product) => {
+      container.innerHTML += `
+        <div class="product">
+          <a href="product.html?id=${String(product._id)}">
+            <img src="${product.image}" alt="${
+        product.name
+      }" class="set-image" data-id="${product._id}" />
+          </a>
+          <p>${product.name}</p>
+          <p class="price">${product.price} грн</p>
+          <p class="rating">⭐ Рейтинг: ${product.rating ?? 'Немає'}</p>
+        </div>
+      `;
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   const icon = document.getElementById('searchIcon');
   const input = document.getElementById('searchInput');
 
@@ -41,6 +90,20 @@ document.addEventListener('DOMContentLoaded', function () {
           b.querySelector('.price').textContent.replace(/\D/g, '')
         );
         return sortType === 'asc' ? priceA - priceB : priceB - priceA;
+      });
+    } else if (sortType === 'rating-asc' || sortType === 'rating-desc') {
+      products.sort((a, b) => {
+        const ratingA =
+          parseFloat(
+            a.querySelector('.rating').textContent.replace(/[^\d.]/g, '')
+          ) || 0;
+        const ratingB =
+          parseFloat(
+            b.querySelector('.rating').textContent.replace(/[^\d.]/g, '')
+          ) || 0;
+        return sortType === 'rating-asc'
+          ? ratingA - ratingB
+          : ratingB - ratingA;
       });
     }
 

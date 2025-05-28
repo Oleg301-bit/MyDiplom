@@ -5,6 +5,7 @@
 
 body {
   background-color: var(--el-bgcolor);
+  font-family: 'Dancing Script', cursive;
 }
 .main-logo {
   width: 130px;
@@ -61,8 +62,21 @@ body {
   font-family: 'Great Vibes', cursive;
   padding-top: 20px;
 }
+.flex-searching {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  align-items: center;
+}
+.column-searching {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+label {
+  color: white;
+}
 .search-container {
-  margin: 10px 1250px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -103,14 +117,12 @@ body {
   font-weight: bold;
 }
 .set-image {
-  width: 170px;
-  height: 200px;
+  width: 180px;
+  height: 210px;
 }
 .price {
-  border: 2px solid black;
-  margin-top: 15px;
+  margin: 25px;
 }
-
 .text-under-form {
   font-size: 1.8em;
   text-align: center;

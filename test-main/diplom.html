@@ -14,16 +14,9 @@
   </head>
   <body>
     <header class="header-contener">
-      <img src="./images/lodo.jpg" alt="Логотип" class="main-logo" />
+      <img src="./image_w_kos/lodo.jpg " alt=Логотип" class="main-logo" />
       <ul class="menu-list">
-        <a href="w-kos.html" class="menu-item">Жіноча косметика</a>
-        <a href="m-Kos.html" class="menu-item">Чоловіча косметика</a>
-        <a href="t-Kos.html" class="menu-item">Косметика для підлітків</a>
-        <a href="l-Kos.html" class="menu-item"> Лікувальна косметика</a>
         <a href="#contact" class="menu-item">Контакти</a>
-        <a href="register.html" class="menu-item"
-          ><i class="fa-solid fa-user"></i
-        ></a>
         <a class="menu-item" href="basket.html"
           ><i class="fa-solid fa-basket-shopping"></i
         ></a>
@@ -40,115 +33,40 @@
         </h2>
       </article>
     </section>
-    <div class="search-container">
-      <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Пошук товару..."
-        style="display: none"
-      />
-    </div>
-    <div class="search-container">
-      <select id="sortSelect">
-        <option value="default">Без сортування</option>
-        <option value="asc">Від дешевих до дорогих</option>
-        <option value="desc">Від дорогих до дешевих</option>
-      </select>
-    </div>
-
-    <div class="products-grid">
-      <div class="product">
-        <a href="w11row.html">
-          <img
-            src="./image_w_kos/lip-stick.jfif"
-            alt="Товар 1"
-            class="set-image"
+    <div class="flex-searching">
+      <div>
+        <input type="checkbox" id="women" name="women" />
+        <label for="women">Жіноча косметика</label>
+        <input type="checkbox" id="men" name="men" />
+        <label for="men">Чоловіча косметика</label>
+        <input type="checkbox" id="teens" name="teens" />
+        <label for="teens">Косметика для підлітків</label
+        ><input type="checkbox" id="treat" name="treat" />
+        <label for="treat">Лікувальна косметика</label>
+      </div>
+      <div class="column-searching">
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Пошук товару..."
+            style="display: none"
           />
-        </a>
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./image_w_kos/Mary-Kay.jpg" alt="Товар 2" class="set-image" />
-        <p>Mary</p>
-        <p class="price">900грн</p>
-      </div>
-      <div class="product">
-        <img
-          src="./image_w_kos/lip-stick2.jfif"
-          alt="Товар 1"
-          class="set-image"
-        />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">1100грн</p>
-      </div>
-      <div class="product">
-        <img src="./image_w_kos/m-3.jpg" alt="Товар 3" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./images/m-Kos.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./images/m-Kos.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./images/m-Kos.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./images/m-Kos.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./images/t-Kos.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./images/t-Kos.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./images/t-Kos.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./images/t-Kos.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./image_w_kos/wkosm.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./image_w_kos/wkosm.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./image_w_kos/wkosm.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
-      </div>
-      <div class="product">
-        <img src="./image_w_kos/wkosm.jpg" alt="Товар 1" class="set-image" />
-        <p>L'Oreal Paris Color Riche Nude Intense</p>
-        <p class="price">566грн</p>
+        </div>
+        <div class="search-container">
+          <select id="sortSelect">
+            <option value="default">Без сортування</option>
+            <option value="asc">Від дешевих до дорогих</option>
+            <option value="desc">Від дорогих до дешевих</option>
+            <option value="rating-asc">Зростаючий рейтинг</option>
+            <option value="rating-desc">Спададаючий рейтинг</option>
+          </select>
+        </div>
       </div>
     </div>
+    <div class="products-grid" id="productsContainer"></div>
+    
 
     <p class="text-under-form">
       Разом до краси, яка не має меж. Ми завжди раді вам!
