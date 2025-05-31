@@ -111,3 +111,45 @@ document.addEventListener('DOMContentLoaded', function () {
     products.forEach((product) => productsGrid.appendChild(product));
   });
 });
+
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+document.getElementById("cart-count").textContent = cart.length;
+
+
+fetch('http://localhost:5500/api/products')
+  .then(res => res.json())
+  .then(products => {
+    const container = document.getElementById("productsContainer");
+
+    products.forEach(product => {
+      const card = document.createElement("div");
+      card.innerHTML = `
+        <h3>${product.name}</h3>
+        <p>${product.price} грн</p>
+        <button class="add-to-cart"
+          data-id="${product._id}"
+          data-name="${product.name}"
+          data-price="${product.price}">
+          Додати у кошик
+        </button>
+      `;
+      container.appendChild(card);
+    });
+  });
+
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("add-to-cart")) {
+    const btn = e.target;
+    const product = {
+      id: btn.dataset.id,
+      name: btn.dataset.name,
+      price: parseFloat(btn.dataset.price)
+    };
+
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    document.getElementById("cart-count").textContent = cart.length;
+  }
+});

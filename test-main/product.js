@@ -53,3 +53,46 @@ document.addEventListener("click", function (e) {
     cartCountElement.textContent = cartCount;
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const addToCartBtn = document.querySelector(".add-to-cart");
+  const cartCount = document.getElementById("cart-count");
+
+  
+  const product = {
+    id: getProductIdFromURL(),
+    name: document.getElementById("productName").textContent,
+    price: document.getElementById("productPrice").textContent.replace(/\D/g, ""),
+    image: document.getElementById("productImage").src,
+    quantity: 1
+  };
+
+
+  addToCartBtn.addEventListener("click", function () {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingItem = cart.find(item => item.id === product.id);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+  });
+
+  
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+    cartCount.textContent = totalCount;
+  }
+
+  updateCartCount(); 
+
+
+  function getProductIdFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("id") || "default-id";
+  }
+});
