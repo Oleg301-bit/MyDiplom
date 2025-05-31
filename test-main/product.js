@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  fetch(`http://localhost:5500/api/products/${product_id}`)
+  fetch(`http://localhost:5500/api/products/${productId}`)
     .then((res) => res.json())
     .then((product) => renderProduct(product))
     .catch((err) => console.error('Помилка завантаження товару:', err));
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.set-image')?.setAttribute('src', product.image);
     document.querySelector('.set-image')?.setAttribute('alt', product.name);
 
-    // Вставка опису, характеристик, складу і т.д.
     document.getElementById('descriptionDropdown').innerHTML = `
       <p class="set-text">${product.description}</p>
     `;
@@ -42,5 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('ingredientsDropdown').innerHTML = `
       <p class="set-text">${product.ingredients}</p>
     `;
+  }
+});
+let cartCount = 0;
+
+const cartCountElement = document.getElementById("cart-count");
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("add-to-cart")) {
+    cartCount++;
+    cartCountElement.textContent = cartCount;
   }
 });

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title id="product-title">Назва товару</title>
     <link rel="stylesheet" href="w11row.css" />
-    <script defer src="product.js"></script>
+
     <script defer src="script.js"></script>
     <script defer src="server.js"></script>
 
@@ -19,26 +19,21 @@
   <body>
     <header class="header-contener">
       <img src="./image_w_kos/lodo.jpg" alt="Логотип" class="main-logo" />
+      <a class="menu-item" href="basket.html" id="cart-icon">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span id="cart-count" class="cart-count">0</span>
+      </a>
     </header>
 
-    <div class="flex-construction">
-      <a href="diplom.html" class="set-icon">
-        <i class="fa-solid fa-arrow-left-long"></i>
-      </a>
+    <div>
       <div>
         <h1 id="productName">Назва товару</h1>
       </div>
     </div>
 
     <div class="set-main-block">
+      <img id="productImage" src="" alt="Зображення товару" class="set-image" />
       <div class="column-description">
-        <img
-          id="productImage"
-          src=""
-          alt="Зображення товару"
-          class="product-image"
-        />
-
         <button
           class="button"
           onclick="toggleDropdown('characteristicsDropdown', 'arrow1')"
@@ -84,10 +79,10 @@
     <section>
       <div class="set-button-link">
         <p class="price" id="productPrice">Вартість: 0 грн</p>
-        <button class="buy-product" onclick="location.href='result.html'">
+        <button class="buy-product add-to-cart">
           Додати у кошик
         </button>
-        <button class="buy-product" onclick="location.href='result.html'">
+        <button class="buy-product" onclick="location.href='diplom.html'">
           Продовжити покупку
         </button>
       </div>
@@ -106,5 +101,6 @@
         <li class="footer-item">Останні новини</li>
       </ul>
     </footer>
+    <script src="product.js"></script>
   </body>
 </html>
