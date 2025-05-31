@@ -1,36 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оформлення замовлення</title>
-    <link rel="stylesheet" href="pay.css">
-</head>
-<body>
-    <h1 class="main-name">Введіть будь-ласка необхідну інформацію для оформлення замовлення </h1>
-    <article class="form-loc">
-    <form action="/register" method="post">
-        <labeL for="username">Ім'я користувача</labeL>
-        <input type="text" id="username" name="username" placeholder="Введіть будь-ласка Ім'я" required>
-        <label for="email">Емейл</label>
-        <input type="email" id="email" name="email" placeholder="Введіть будь-ласка емейл" required>
-        <label for="tel" >Введіть будь-ласка  свій номер телефону</label>
-        <input type="tel" id="phone" name="phone" placeholder="Введіть будь-ласка свій номер телефону" required>
-        <label for="quality">Кількість товару</label>
-        <input type="number" id="quality" name="quality" placeholder="Введіть будь-ласка кількість товарів" required>
-        <p>Отримайте будь-ласка форму підтвердження замовлення</p>
-        <input type="radio" id="choose" name="choose" value="choose">
-        <label for="choose">Отримати повідомлення на пошту</label>
-        <input type="radio" id="choose1" name="choose" value="choose">
-        <label for="choose">Отримати дзвінок</label>
-        <input type="radio" id="choose2" name="choose" value="choose">
-        <label for="choose">Отримати повідомлення SMS</label>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pay.css" />
+  </head>
+  <body>
+    <div>
+      <label for="tel">Номер телефону</label>
+      <input type="tel" id="tel" />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" />
+    </div>
 
+    <label for="city">Місто:</label>
+    <input id="city" name="city" list="city-list" />
 
+    <datalist id="city-list">
+      <option value="Київ"></option>
+      <option value="Львів"></option>
+      <option value="Одеса"></option>
+      <option value="Харків"></option>
+      <option value="Дніпро"></option>
+    </datalist>
 
-    </form>
-    </article>
-    <a href="result.html" target="_blank" class="black-button">Оформити замовлення</a>
-    
-</body>
+    <label for="district">Район:</label>
+    <input id="district" name="district" list="district-list" />
+
+    <datalist id="district-list">
+      <option value="Центральний"></option>
+      <option value="Східний"></option>
+      <option value="Західний"></option>
+      <option value="Північний"></option>
+      <option value="Південний"></option>
+    </datalist>
+
+    <div id="result">
+      <p id="branch"></p>
+      <p id="orderNumber"></p>
+    </div>
+
+    <script src="pay.js"></script>
+  </body>
 </html>

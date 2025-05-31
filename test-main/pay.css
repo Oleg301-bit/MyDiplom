@@ -1,39 +1,9 @@
-body{
-    font-family: "Times New Roman";
-    background-color: aliceblue;
+label, input {
+  display: block;
+  margin: 10px 0 5px;
 }
-.main-name{
-    font-weight:bold ;
-    text-align: center;
-}
-form{
-    border: 2px black solid;
-    padding: 3vh 3vw;
-    border-radius: 10px;
-    width: 20%;
-    
-}
-.form-loc{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-label{
-    display: block;
-    margin-bottom: 1vw;
-    
-    
-}
-input{
-    border-radius: 50px;
-}
-.black-button{
-    text-transform: uppercase;
-    border-radius: 50px;
-    background-color: black;
-    color: white;
-    padding: 1.15em 1.94em;
-    margin-left: 40em;
-    text-decoration: none;
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
 }

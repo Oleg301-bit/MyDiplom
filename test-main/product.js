@@ -43,56 +43,59 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 });
-let cartCount = 0;
 
-const cartCountElement = document.getElementById("cart-count");
+document.addEventListener('DOMContentLoaded', function () {
+  const addToCartBtn = document.querySelector('.add-to-cart');
 
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("add-to-cart")) {
-    cartCount++;
-    cartCountElement.textContent = cartCount;
+  if (!addToCartBtn) {
+    console.warn('Кнопка не знайдена');
+    return;
   }
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const addToCartBtn = document.querySelector(".add-to-cart");
-  const cartCount = document.getElementById("cart-count");
 
-  
-  const product = {
-    id: getProductIdFromURL(),
-    name: document.getElementById("productName").textContent,
-    price: document.getElementById("productPrice").textContent.replace(/\D/g, ""),
-    image: document.getElementById("productImage").src,
-    quantity: 1
-  };
+  addToCartBtn.addEventListener('click', function () {
+    const name =
+      document.getElementById('productName').textContent || 'Без назви';
+    const priceText =
+      document.getElementById('productPrice').textContent || '0 грн';
+    const price = parseInt(priceText.replace(/[^\d]/g, ''), 10) || 0;
+    const image = document.getElementById('productImage')?.src || '';
 
-
-  addToCartBtn.addEventListener("click", function () {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    const existingItem = cart.find(item => item.id === product.id);
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      cart.push(product);
+    const productId = new URLSearchParams(window.location.search).get('id');
+    if (!productId) {
+      console.error('ID товару не знайдено');
+      return;
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+    const newProduct = {
+      id: productId,
+      name: productId,
+      price,
+      image,
+      quantity: 1,
+    };
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existing = cart.find((item) => item.id === newProduct.id);
+
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push(newProduct);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
   });
 
-  
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
-    cartCount.textContent = totalCount;
-  }
-
-  updateCartCount(); 
-
-
-  function getProductIdFromURL() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("id") || "default-id";
-  }
+  updateCartCount();
 });
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const count = cart.reduce((total, item) => total + item.quantity, 0);
+  const cartCountElem = document.getElementById('cart-count');
+  if (cartCountElem) {
+    cartCountElem.textContent = count;
+  }
+}
