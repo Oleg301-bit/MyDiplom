@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', async function () {
   const cartContainer = document.getElementById('cart-container');
-
+  const totalContainer = document.getElementById('cart-total');
   let cart = [];
+
   try {
     cart = JSON.parse(localStorage.getItem('cart')) || [];
   } catch (e) {
@@ -10,11 +11,13 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   if (cart.length === 0) {
-    cartContainer.innerHTML = '<p>Ваш кошик порожній.</p>';
+    cartContainer.innerHTML =
+      '<p style="color: white;">Ваш кошик порожній.</p>';
+    totalContainer.textContent = '';
     return;
   }
 
-  let totalSum = 0; 
+  let total = 0;
 
   for (const item of cart) {
     try {
@@ -22,8 +25,8 @@ document.addEventListener('DOMContentLoaded', async function () {
       if (!res.ok) throw new Error('Товар не знайдено');
       const product = await res.json();
 
-      const itemSum = product.price * item.quantity;
-      totalSum += itemSum;
+      const sum = product.price * item.quantity;
+      total += sum;
 
       const div = document.createElement('div');
       div.classList.add('cart-item');
@@ -32,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         <p><strong>${product.name}</strong></p>
         <p>Ціна: ${product.price} грн</p>
         <p>Кількість: ${item.quantity}</p>
-        <p>Сума: ${itemSum} грн</p>
+        <p>Сума: ${sum} грн</p>
       `;
       cartContainer.appendChild(div);
     } catch (err) {
@@ -40,10 +43,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   }
 
-  const totalDiv = document.createElement('div');
-  totalDiv.classList.add('cart-total');
-  totalDiv.style.fontWeight = 'bold';
-  totalDiv.style.marginTop = '20px';
-  totalDiv.textContent = `Загальна сума: ${totalSum} грн`;
-  cartContainer.appendChild(totalDiv);
+  totalContainer.textContent = `Загальна сума: ${total} грн`;
 });
