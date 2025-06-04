@@ -7,7 +7,6 @@ body {
   background-color: rgb(32, 32, 32);
   color: white;
   font-family: 'Dancing Script', cursive;
-
 }
 .main-logo {
   width: 130px;
@@ -31,24 +30,9 @@ body {
   text-decoration: none;
   color: white;
 }
-
-.set-icon {
-  margin-left: 90px;
-  color: white;
-}
-label,
-input {
-  display: block;
-  margin: 20px 180px;
-}
-#city,
-#district {
-  padding: 10px 40px;
-  border-radius: 25px;
-}
-#result {
-  margin: 20px 180px;
-  font-weight: bold;
+main {
+  width: 70%;
+  margin: 0 auto;
 }
 .footer-container,
 .footer-item-list {
@@ -59,7 +43,7 @@ input {
   color: white;
   padding: 0 20px;
   list-style-type: none;
-  margin-top: 140px;
+  margin-top: 60px;
 }
 .footer-item {
   margin-left: 16em;

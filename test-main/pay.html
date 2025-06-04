@@ -4,17 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="pay.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
-    <div>
-      <label for="tel">Номер телефону</label>
-      <input type="tel" id="tel" />
-    </div>
-    <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" />
-    </div>
-
+    <header class="header-contener">
+      <img src="./image_w_kos/lodo.jpg " alt=Логотип" class="main-logo" />
+      <ul class="menu-list">
+        <a href="#contact" class="menu-item">Контакти</a>
+        <a class="menu-item" href="basket.html"
+          ><i class="fa-solid fa-basket-shopping"></i
+        ></a>
+      </ul>
+    </header>
     <label for="city">Місто:</label>
     <input id="city" name="city" list="city-list" />
 
@@ -40,8 +44,18 @@
     <div id="result">
       <p id="branch"></p>
       <p id="orderNumber"></p>
+      <p id="pickupTime"></p>
     </div>
 
     <script src="pay.js"></script>
+    <footer class="footer-container">
+      <ul class="footer-item-list">
+        <li class="footer-item" id="contact">
+          Контакти <br />(+380506561234)<br />(+380506561234)
+        </li>
+        <li class="footer-item">Останні новини</li>
+        <a href="vidguk.html" class="footer-item">Відгуки</a>
+      </ul>
+    </footer>
   </body>
 </html>

@@ -1,3 +1,11 @@
+body {
+  background-color: rgb(32, 32, 32);
+  color: white;
+  font-family: 'Dancing Script', cursive;
+}
+.set-icon {
+  color: white;
+}
 section {
   margin: 0 90px;
 }

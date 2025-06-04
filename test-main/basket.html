@@ -4,8 +4,21 @@
     <meta charset="UTF-8" />
     <title>Кошик</title>
     <link rel="stylesheet" href="basket.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
+    <header class="header-contener">
+      <img src="./image_w_kos/lodo.jpg " alt=Логотип" class="main-logo" />
+      <ul class="menu-list">
+        <a href="#contact" class="menu-item">Контакти</a>
+        <a class="menu-item" href="basket.html"
+          ><i class="fa-solid fa-basket-shopping"></i
+        ></a>
+      </ul>
+    </header>
     <div id="cart-container"></div>
     <div id="cart-items"></div>
 
@@ -14,5 +27,14 @@
     <button onclick="location.href='pay.html'">Замовити</button>
 
     <script src="basket.js"></script>
+    <footer class="footer-container">
+      <ul class="footer-item-list">
+        <li class="footer-item" id="contact">
+          Контакти <br />(+380506561234)<br />(+380506561234)
+        </li>
+        <li class="footer-item">Останні новини</li>
+        <a href="vidguk.html" class="footer-item">Відгуки</a>
+      </ul>
+    </footer>
   </body>
 </html>

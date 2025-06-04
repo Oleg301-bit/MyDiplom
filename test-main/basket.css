@@ -1,7 +1,36 @@
+:root {
+  --el-bgcolor: rgb(32, 32, 32);
+  --el-coloor: white;
+}
 body {
   font-family: Arial, sans-serif;
   background-color: rgb(32, 32, 32);
   margin: 20px;
+}
+.main-logo {
+  width: 130px;
+  height: 60px;
+}
+.header-contener {
+  display: flex;
+  align-items: center;
+  padding: 2.2em 3.94em;
+  justify-content: space-between;
+  position: fixed;
+  background-color: var(--el-bgcolor);
+  color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.menu-list {
+  display: flex;
+  align-items: center;
+}
+.menu-item {
+  margin-left: 3em;
+  text-decoration: none;
+  color: white;
 }
 
 #cart-container {
@@ -9,6 +38,7 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: flex-start;
+  margin-top: 145px;
 }
 
 .cart-item {
@@ -54,4 +84,24 @@ button {
 
 button:hover {
   background-color: #4834d4;
+}
+.footer-container,
+.footer-item-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--el-bgcolor);
+  color: white;
+  padding: 0 20px;
+  list-style-type: none;
+  margin-top: 35px;
+}
+.footer-item {
+  margin-left: 16em;
+  color: white;
+  text-decoration: none;
+}
+.set-contact-footer {
+  display: flex;
+  flex-direction: column;
 }
