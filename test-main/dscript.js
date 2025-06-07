@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
 document.addEventListener('DOMContentLoaded', () => {
   const icon = document.getElementById('searchIcon');
   const input = document.getElementById('searchInput');
@@ -112,18 +111,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-document.getElementById("cart-count").textContent = cart.length;
-
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+document.getElementById('cart-count').textContent = cart.length;
 
 fetch('http://localhost:5500/api/products')
-  .then(res => res.json())
-  .then(products => {
-    const container = document.getElementById("productsContainer");
+  .then((res) => res.json())
+  .then((products) => {
+    const container = document.getElementById('productsContainer');
 
-    products.forEach(product => {
-      const card = document.createElement("div");
+    products.forEach((product) => {
+      const card = document.createElement('div');
       card.innerHTML = `
         <h3>${product.name}</h3>
         <p>${product.price} грн</p>
@@ -138,18 +135,17 @@ fetch('http://localhost:5500/api/products')
     });
   });
 
-
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("add-to-cart")) {
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('add-to-cart')) {
     const btn = e.target;
     const product = {
       id: btn.dataset.id,
       name: btn.dataset.name,
-      price: parseFloat(btn.dataset.price)
+      price: parseFloat(btn.dataset.price),
     };
 
     cart.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    document.getElementById("cart-count").textContent = cart.length;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart-count').textContent = cart.length;
   }
 });

@@ -41,6 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('ingredientsDropdown').innerHTML = `
       <p class="set-text">${product.ingredients}</p>
     `;
+    document.getElementById('vidgukDropdown').innerHTML = `
+      <ul>
+        <li>Олена: ${product.vidguk}</li>
+        <li>Катерина: ${product.vidguk1}</li>
+      </ul>
+    `;
   }
 });
 

@@ -115,6 +115,14 @@ label {
   border: 1px solid #ddd;
   border-radius: 15px;
   font-weight: bold;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, border-color 0.3s;
+  will-change: transform;
+}
+.product:hover {
+  transform: scale(1.08);
+  background-color: white;
+  z-index: 2;
 }
 .set-image {
   width: 180px;

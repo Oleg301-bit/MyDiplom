@@ -41,9 +41,9 @@ function tryGenerate() {
       .padStart(2, '0')}.${randomDate.getFullYear()}`;
     const time = getRandomTime();
 
-    branchOutput.textContent = `Найближче відділення нової пошти №${branchNumber}.`;
+    branchOutput.textContent = `Найближче відділення Нової пошти №${branchNumber}.`;
     orderNumberOutput.textContent = `Номер вашого замовлення: ${orderNum}.`;
-    pickupTimeOutput.textContent = `Замовлення буде Вас очікувати: ${formattedDate}  о ${time}. Ви можете забрати товар впродовж 3 днів.`;
+    pickupTimeOutput.textContent = `Замовлення буде Вас очікувати: ${formattedDate}  о ${time}. Ви можете забрати товар впродовж 3 діб.`;
   } else {
     branchOutput.textContent = '';
     orderNumberOutput.textContent = '';

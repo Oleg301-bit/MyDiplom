@@ -72,15 +72,22 @@
         <div id="ingredientsDropdown" class="dropdown">
           <p class="set-text" id="productIngredients"></p>
         </div>
+        <button
+          class="button"
+          onclick="toggleDropdown('vidgukDropdown', 'arrow5')"
+        >
+          Відгуки <span id="arrow4" class="arrow">▼</span>
+        </button>
+        <div id="vidgukDropdown" class="dropdown">
+          <p class="set-text" id="productIngredients"></p>
+        </div>
       </div>
     </div>
 
     <section>
       <div class="set-button-link">
         <p class="price" id="productPrice">Вартість: 0 грн</p>
-        <button class="buy-product add-to-cart">
-          Додати у кошик
-        </button>
+        <button class="buy-product add-to-cart">Додати у кошик</button>
         <button class="buy-product" onclick="location.href='diplom.html'">
           Продовжити покупку
         </button>
