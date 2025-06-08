@@ -6,107 +6,109 @@
     <link rel="stylesheet" href="w11row.css" />
 
     <script defer src="script.js"></script>
-    <script defer src="server.js"></script>
+    <script defer src="product.js"></script>
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-..."
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
   </head>
   <body>
-    <header class="header-contener">
+    <header class="header-container">
       <img src="./image_w_kos/lodo.jpg" alt="Логотип" class="main-logo" />
-      <a class="menu-item" href="basket.html" id="cart-icon">
+      <a
+        class="menu-item"
+        href="basket.html"
+        id="cart-icon"
+        aria-label="Корзина"
+      > 
+      
         <i class="fa-solid fa-basket-shopping"></i>
         <span id="cart-count" class="cart-count">0</span>
       </a>
     </header>
-    <div>
-      <div>
-        <h1 id="productName">Назва товару</h1>
+
+    <main class="product-main">
+      <h1 id="productName">Назва товару</h1>
+
+      <div class="set-main-block">
+        <div class="column-description">
+          <button
+            class="button"
+            aria-expanded="false"
+            aria-controls="characteristicsDropdown"
+            onclick="toggleDropdown('characteristicsDropdown', 'arrow1', this)"
+          >
+            Характеристики <span id="arrow1" class="arrow">▼</span>
+          </button>
+          <div id="characteristicsDropdown" class="dropdown" aria-hidden="true">
+            <ul id="productCharacteristics"></ul>
+          </div>
+
+          <button
+            class="button"
+            aria-expanded="false"
+            aria-controls="descriptionDropdown"
+            onclick="toggleDropdown('descriptionDropdown', 'arrow2', this)"
+          >
+            Опис <span id="arrow2" class="arrow">▼</span>
+          </button>
+          <div id="descriptionDropdown" class="dropdown" aria-hidden="true">
+            <p class="set-text" id="productDescription"></p>
+          </div>
+
+          <button
+            class="button"
+            aria-expanded="false"
+            aria-controls="usageDropdown"
+            onclick="toggleDropdown('usageDropdown', 'arrow3', this)"
+          >
+            Спосіб застосування <span id="arrow3" class="arrow">▼</span>
+          </button>
+          <div id="usageDropdown" class="dropdown" aria-hidden="true">
+            <p class="set-text" id="productUsage"></p>
+          </div>
+
+          <button
+            class="button"
+            aria-expanded="false"
+            aria-controls="ingredientsDropdown"
+            onclick="toggleDropdown('ingredientsDropdown', 'arrow4', this)"
+          >
+            Склад <span id="arrow4" class="arrow">▼</span>
+          </button>
+          <div id="ingredientsDropdown" class="dropdown" aria-hidden="true">
+            <p class="set-text" id="productIngredients"></p>
+          </div>
+        </div>
+
+        <img
+          id="productImage"
+          src=""
+          alt="Зображення товару"
+          class="set-image"
+        />
+
+        <div class="set-button-link">
+          <p class="price" id="productPrice">Вартість: 0 грн</p>
+          <button class="buy-product add-to-cart">Додати у кошик</button>
+          <button class="buy-product" onclick="location.href='diplom.html'">
+            Продовжити покупку
+          </button>
+        </div>
       </div>
-    </div>
-
-    <div class="set-main-block">
-      <img id="productImage" src="" alt="Зображення товару" class="set-image" />
-      <div class="column-description">
-        <button
-          class="button"
-          onclick="toggleDropdown('characteristicsDropdown', 'arrow1')"
-        >
-          Характеристики <span id="arrow1" class="arrow">▼</span>
-        </button>
-        <div id="characteristicsDropdown" class="dropdown">
-          <ul id="productCharacteristics"></ul>
-        </div>
-
-        <button
-          class="button"
-          onclick="toggleDropdown('descriptionDropdown', 'arrow2')"
-        >
-          Опис <span id="arrow2" class="arrow">▼</span>
-        </button>
-        <div id="descriptionDropdown" class="dropdown">
-          <p class="set-text" id="productDescription"></p>
-        </div>
-
-        <button
-          class="button"
-          onclick="toggleDropdown('usageDropdown', 'arrow3')"
-        >
-          Спосіб застосування <span id="arrow3" class="arrow">▼</span>
-        </button>
-        <div id="usageDropdown" class="dropdown">
-          <p class="set-text" id="productUsage"></p>
-        </div>
-
-        <button
-          class="button"
-          onclick="toggleDropdown('ingredientsDropdown', 'arrow4')"
-        >
-          Склад <span id="arrow4" class="arrow">▼</span>
-        </button>
-        <div id="ingredientsDropdown" class="dropdown">
-          <p class="set-text" id="productIngredients"></p>
-        </div>
-        <button
-          class="button"
-          onclick="toggleDropdown('vidgukDropdown', 'arrow5')"
-        >
-          Відгуки <span id="arrow4" class="arrow">▼</span>
-        </button>
-        <div id="vidgukDropdown" class="dropdown">
-          <p class="set-text" id="productIngredients"></p>
-        </div>
-      </div>
-    </div>
-
-    <section>
-      <div class="set-button-link">
-        <p class="price" id="productPrice">Вартість: 0 грн</p>
-        <button class="buy-product add-to-cart">Додати у кошик</button>
-        <button class="buy-product" onclick="location.href='diplom.html'">
-          Продовжити покупку
-        </button>
-      </div>
-    </section>
+    </main>
 
     <footer class="footer-container">
       <ul class="footer-item-list">
-        <div class="set-contact-footer">
-          <li class="footer-item" id="contact">Контакти</li>
-          <div>
-            <li class="footer-item">(+380506561234)</li>
-            <li class="footer-item">(+380506561234)</li>
-          </div>
-        </div>
+        <li class="footer-item contact-header">Контакти</li>
+        <li class="footer-item">(+380506561234)</li>
+        <li class="footer-item">(+380506561234)</li>
         <li class="footer-item">Відгуки</li>
         <li class="footer-item">Останні новини</li>
       </ul>
     </footer>
-    <script src="product.js"></script>
   </body>
 </html>

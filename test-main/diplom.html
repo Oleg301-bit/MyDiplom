@@ -13,15 +13,18 @@
     <script defer src="dscript.js"></script>
   </head>
   <body>
-    <header class="header-contener">
-      <img src="./image_w_kos/lodo.jpg " alt=Логотип" class="main-logo" />
-      <ul class="menu-list">
-        <a href="#contact" class="menu-item">Контакти</a>
-        <a class="menu-item" href="basket.html"
-          ><i class="fa-solid fa-basket-shopping"></i
-        ></a>
-      </ul>
-    </header>
+    <header class="header-container">
+  <img src="./image_w_kos/lodo.jpg" alt="Логотип" class="main-logo" />
+  <ul class="menu-list">
+    <li><a href="#contact" class="menu-item">Контакти</a></li>
+    <li>
+      <a class="menu-item" href="basket.html">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </li>
+  </ul>
+  </header>
     <section class="first-screen">
       <article class="first-screen-contener">
         <h1 class="main-title">
@@ -33,51 +36,73 @@
         </h2>
       </article>
     </section>
-    <div class="flex-searching">
-      <div>
-        <input type="checkbox" id="women" name="women" />
-        <label for="women">Жіноча косметика</label>
-        <input type="checkbox" id="men" name="men" />
-        <label for="men">Чоловіча косметика</label>
-        <input type="checkbox" id="teens" name="teens" />
-        <label for="teens">Косметика для підлітків</label
-        ><input type="checkbox" id="treat" name="treat" />
-        <label for="treat">Лікувальна косметика</label>
-      </div>
-      <div class="column-searching">
-        <div class="search-container">
-          <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Пошук товару..."
-            style="display: none"
-          />
-        </div>
-        <div class="search-container">
-          <select id="sortSelect">
-            <option value="default">Без сортування</option>
-            <option value="asc">Від дешевих до дорогих</option>
-            <option value="desc">Від дорогих до дешевих</option>
-            <option value="rating-asc">Зростаючий рейтинг</option>
-            <option value="rating-desc">Спададаючий рейтинг</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="products-grid" id="productsContainer"></div>
 
-    <p class="text-under-form">
-      Разом до краси, яка не має меж. Ми завжди раді вам!
-    </p>
+    <div class="centered-input-wrapper">
+  <i class="fa-solid fa-magnifying-glass set-icon" id="searchIcon"></i>
+  <input type="text" class="search-input" id="searchInput" placeholder="Я шукаю" />
+</div>
+
+<div class="setting-main-content">
+  <form>
+    <fieldset>
+      <legend>Класифікація</legend>
+      <div class="sidebar">
+        <div class="flex-sidebar">
+          <input type="checkbox" id="women" />
+          <label for="women" class="class-line" data-category="women">Жіноча косметика</label>
+        </div>
+        <div class="flex-sidebar">
+          <input type="checkbox" id="men" />
+          <label for="men" class="class-line" data-category="men">Чоловіча косметика</label>
+        </div>
+        <div class="flex-sidebar">
+          <input type="checkbox" id="teens" />
+          <label for="teens" class="class-line" data-category="teens">Косметика для підлітків</label>
+        </div>
+        <div class="flex-sidebar">
+          <input type="checkbox" id="treat" />
+          <label for="treat" class="class-line" data-category="treat">Лікувальна косметика</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+  <legend>Фільтрація</legend>
+  <div class="sidebar" id="productList">
+    <div class="flex-sidebar">
+      <div class="filter-line" data-sort="asc">Від дешевих до дорогих</div>
+    </div>
+    <div class="flex-sidebar">
+      <div class="filter-line" data-sort="desc">Від дорогих до дешевих</div>
+    </div>
+    <div class="flex-sidebar">
+      <div class="filter-line" data-sort="rating-asc">Зростаючий рейтинг</div>
+    </div>
+    <div class="flex-sidebar">
+      <div class="filter-line" data-sort="rating-desc">Спадаючий рейтинг</div>
+    </div>
+  </div>
+</fieldset>
+
+  </form>
+
+  <div class="products-grid" id="productsContainer"></div>
+</div>
+
+
+      <div class="products-grid" id="productsContainer"></div>
+    </div>
     <footer class="footer-container">
-      <ul class="footer-item-list">
-        <li class="footer-item" id="contact">
-          Контакти <br />(+380506561234)<br />(+380506561234)
-        </li>
-        <a href="news.html" class="footer-item">Останні новини</a>
-        <a href="vidguk.html" class="footer-item">Відгуки</a>
-      </ul>
-    </footer>
+  <ul class="footer-item-list">
+    <li class="footer-item" id="contact">
+      Контакти <br />
+      (+380506561234)<br />
+      (+380506561234)
+    </li>
+    <li><a href="news.html" class="footer-item">Останні новини</a></li>
+    <li><a href="vidguk.html" class="footer-item">Відгуки</a></li>
+  </ul>
+</footer>
+
   </body>
 </html>

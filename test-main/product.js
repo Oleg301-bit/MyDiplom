@@ -12,53 +12,54 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch((err) => console.error('Помилка завантаження товару:', err));
 
   function renderProduct(product) {
-    document.querySelector('h1').textContent = product.name;
-    document.querySelector(
-      '.price'
+    // Назва товару в заголовок сторінки і заголовок в body
+    document.title = product.name;
+    document.getElementById('productName').textContent = product.name;
+    document.getElementById('product-title').textContent = product.name;
+
+    // Ціна
+    document.getElementById(
+      'productPrice'
     ).textContent = `Вартість: ${product.price} грн`;
-    document.querySelector('.set-image')?.setAttribute('src', product.image);
-    document.querySelector('.set-image')?.setAttribute('alt', product.name);
 
-    document.getElementById('descriptionDropdown').innerHTML = `
-      <p class="set-text">${product.description}</p>
+    // Зображення
+    const img = document.getElementById('productImage');
+    img.src = product.image;
+    img.alt = product.name;
+
+    // Опис
+    document.getElementById('productDescription').textContent =
+      product.description;
+
+    // Характеристики — список
+    const characteristicsList = document.getElementById(
+      'productCharacteristics'
+    );
+    characteristicsList.innerHTML = `
+      <li>Вік: ${product.age}</li>
+      <li>Бренд: ${product.brand}</li>
+      <li>Об'єм: ${product.volume}</li>
+      <li>Колекція: ${product.collection}</li>
+      <li>Країна ТМ: ${product.countryTM}</li>
+      <li>Зроблено в: ${product.madeIn}</li>
     `;
 
-    document.getElementById('characteristicsDropdown').innerHTML = `
-      <ul>
-        <li>Вік: ${product.age}</li>
-        <li>Бренд: ${product.brand}</li>
-        <li>Об'єм: ${product.volume}</li>
-        <li>Колекція: ${product.collection}</li>
-        <li>Країна ТМ: ${product.countryTM}</li>
-        <li>Зроблено в: ${product.madeIn}</li>
-      </ul>
-    `;
+    // Спосіб застосування
+    document.getElementById('productUsage').textContent = product.usage;
 
-    document.getElementById('usageDropdown').innerHTML = `
-      <p class="set-text">${product.usage}</p>
-    `;
-
-    document.getElementById('ingredientsDropdown').innerHTML = `
-      <p class="set-text">${product.ingredients}</p>
-    `;
-    document.getElementById('vidgukDropdown').innerHTML = `
-      <ul>
-        <li>Олена: ${product.vidguk}</li>
-        <li>Катерина: ${product.vidguk1}</li>
-      </ul>
-    `;
+    // Склад
+    document.getElementById('productIngredients').textContent =
+      product.ingredients;
   }
-});
 
-document.addEventListener('DOMContentLoaded', function () {
+  // Обробник кнопки "Додати у кошик"
   const addToCartBtn = document.querySelector('.add-to-cart');
-
   if (!addToCartBtn) {
-    console.warn('Кнопка не знайдена');
+    console.warn('Кнопка "Додати у кошик" не знайдена');
     return;
   }
 
-  addToCartBtn.addEventListener('click', function () {
+  addToCartBtn.addEventListener('click', () => {
     const name =
       document.getElementById('productName').textContent || 'Без назви';
     const priceText =
@@ -66,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const price = parseInt(priceText.replace(/[^\d]/g, ''), 10) || 0;
     const image = document.getElementById('productImage')?.src || '';
 
-    const productId = new URLSearchParams(window.location.search).get('id');
     if (!productId) {
       console.error('ID товару не знайдено');
       return;
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const newProduct = {
       id: productId,
-      name: productId,
+      name,
       price,
       image,
       quantity: 1,
@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
   });
 
+  // Оновлення лічильника кошика при завантаженні
   updateCartCount();
 });
 
