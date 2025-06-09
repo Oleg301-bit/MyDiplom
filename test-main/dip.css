@@ -4,7 +4,7 @@
   --accent-color: rgb(255, 215, 0);
   --button-bg: #292929;
   --button-hover-bg: #3f3f3f;
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family: 'Great Vibes', cursive;
 }
 
 * {
@@ -94,7 +94,6 @@ body {
   line-height: 1;
   color: var(--el-color);
   padding-left: 30px;
-  font-family: 'Great Vibes', cursive;
 }
 .main-descript {
   color: var(--el-color);
@@ -104,7 +103,6 @@ body {
   padding-top: 20px;
 }
 
-/* Search input wrapper */
 .centered-input-wrapper {
   max-width: 600px;
   margin: 30px auto 40px;
