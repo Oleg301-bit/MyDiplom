@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   const sortSelect = document.getElementById('sortSelect');
 
-  // Завантаження даних
+  
   fetch('http://localhost:5500/api/products')
     .then((res) => res.json())
     .then((data) => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch((err) => console.error(err));
 
-  // Показ/приховування поля пошуку
+
   icon?.addEventListener('click', () => {
     input.style.display = input.style.display === 'none' ? 'block' : 'none';
     if (input.style.display === 'block') input.focus();
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   input.addEventListener('input', applyFilters);
 
-  // Категорії і сортування
+  
   checkboxes.forEach((cb) => cb.addEventListener('change', applyFilters));
   sortSelect?.addEventListener('change', applyFilters);
 

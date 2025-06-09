@@ -45,4 +45,4 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   totalContainer.textContent = `Загальна сума: ${total} грн`;
 });
-//localStorage.clear();
+localStorage.clear();

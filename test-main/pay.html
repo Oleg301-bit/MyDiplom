@@ -3,57 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контактна форма</title>
     <link rel="stylesheet" href="pay.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script defer src="pay.js"></script>
   </head>
   <body>
     <header class="header-contener">
-      <img src="./image_w_kos/lodo.jpg " alt=Логотип" class="main-logo" />
+      <img src="./image_w_kos/lodo.jpg" alt="Логотип" class="main-logo" />
       <ul class="menu-list">
-        <a href="#contact" class="menu-item">Контакти</a>
-        <a class="menu-item" href="basket.html"
-          ><i class="fa-solid fa-basket-shopping"></i
-        ></a>
+        <a href="diplom.html" class="menu-item">Головна</a>
+        <a href="basket.html" class="menu-item">
+          <i class="fa-solid fa-basket-shopping"></i>
+        </a>
       </ul>
     </header>
-    <label for="city">Місто:</label>
-    <input id="city" name="city" list="city-list" />
 
-    <datalist id="city-list">
-      <option value="Київ"></option>
-      <option value="Львів"></option>
-      <option value="Одеса"></option>
-      <option value="Харків"></option>
-      <option value="Дніпро"></option>
-    </datalist>
+    <main>
+      <h2>📦 Контактна форма замовлення</h2>
 
-    <label for="district">Район:</label>
-    <input id="district" name="district" list="district-list" />
+      <form class="contact-form">
+        <label for="phone">Номер телефону</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          required
+          placeholder="+380..."
+        />
 
-    <datalist id="district-list">
-      <option value="Центральний"></option>
-      <option value="Східний"></option>
-      <option value="Західний"></option>
-      <option value="Північний"></option>
-      <option value="Південний"></option>
-    </datalist>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="example@gmail.com"
+        />
 
-    <div id="result">
-      <p id="branch"></p>
-      <p id="orderNumber"></p>
-      <p id="pickupTime"></p>
-    </div>
+        <label for="city">Місто</label>
+        <input
+          list="city-list"
+          id="city"
+          name="city"
+          required
+          placeholder="Виберіть місто"
+        />
+        <datalist id="city-list">
+          <option value="Київ"></option>
+          <option value="Львів"></option>
+          <option value="Харків"></option>
+          <option value="Одеса"></option>
+          <option value="Дніпро"></option>
+        </datalist>
 
-    <script src="pay.js"></script>
+        <label for="district">Район</label>
+        <input
+          list="district-list"
+          id="district"
+          name="district"
+          required
+          placeholder="Виберіть район"
+        />
+        <datalist id="district-list">
+          <!-- Опції оновлюються через JS -->
+        </datalist>
+
+        <label>Тип доставки</label>
+        <div class="radio-group">
+          <label
+            ><input type="radio" name="delivery" value="pickup" required />
+            Самовивіз</label
+          >
+          <label
+            ><input type="radio" name="delivery" value="post" /> Поштомат</label
+          >
+        </div>
+
+        <label>Спосіб оплати</label>
+        <div class="radio-group">
+          <label
+            ><input type="radio" name="payment" value="cash" required />
+            Готівка</label
+          >
+          <label
+            ><input type="radio" name="payment" value="card" /> Картка</label
+          >
+        </div>
+
+        <button type="submit">Надіслати</button>
+      </form>
+      <!-- Модальне вікно -->
+      <div id="thankyou-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h3>Дякуємо, що обрали саме нас 💛</h3>
+          <p>Наш менеджер з вами зв'яжеться у найближчий час.</p>
+        </div>
+      </div>
+    </main>
+
     <footer class="footer-container">
       <ul class="footer-item-list">
-        <li class="footer-item" id="contact">
-          Контакти <br />(+380506561234)<br />(+380506561234)
-        </li>
-        <li class="footer-item">Останні новини</li>
+        <li class="footer-item">Контакти: (+380506561234)</li>
+        <a href="news.html" class="footer-item">Останні новини</a>
         <a href="vidguk.html" class="footer-item">Відгуки</a>
       </ul>
     </footer>

@@ -22,7 +22,7 @@ body {
   flex-direction: column;
 }
 
-/* Header */
+
 .header-contener {
   display: flex;
   align-items: center;
@@ -63,7 +63,7 @@ body {
   color: var(--accent-color);
 }
 
-/* Корзина */
+
 #cart-container {
   margin-top: 15px;
   max-width: 1200px;
@@ -118,7 +118,7 @@ body {
   font-size: 1rem;
 }
 
-/* Загальна сума */
+
 .cart-total {
   max-width: 1200px;
   margin: 25px auto 0 auto;
@@ -131,7 +131,7 @@ body {
   user-select: none;
 }
 
-/* Кнопка "Замовити" */
+
 button {
   display: block;
   max-width: 230px;
@@ -156,7 +156,7 @@ button:hover {
   box-shadow: 0 6px 18px rgba(209, 127, 0, 0.9);
 }
 
-/* Footer */
+
 .footer-container {
   background-color: var(--el-bgcolor);
   border-top: 1px solid #444;
@@ -179,7 +179,7 @@ button:hover {
   text-align: center;
 }
 
-/* Мобільна адаптивність */
+
 @media (max-width: 950px) {
   #cart-container {
     justify-content: center;

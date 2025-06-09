@@ -12,26 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch((err) => console.error('Помилка завантаження товару:', err));
 
   function renderProduct(product) {
-    // Назва товару в заголовок сторінки і заголовок в body
+  
     document.title = product.name;
     document.getElementById('productName').textContent = product.name;
     document.getElementById('product-title').textContent = product.name;
 
-    // Ціна
+    
     document.getElementById(
       'productPrice'
     ).textContent = `Вартість: ${product.price} грн`;
 
-    // Зображення
+    
     const img = document.getElementById('productImage');
     img.src = product.image;
     img.alt = product.name;
 
-    // Опис
+    
     document.getElementById('productDescription').textContent =
       product.description;
 
-    // Характеристики — список
+  
     const characteristicsList = document.getElementById(
       'productCharacteristics'
     );
@@ -44,15 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
       <li>Зроблено в: ${product.madeIn}</li>
     `;
 
-    // Спосіб застосування
+    
     document.getElementById('productUsage').textContent = product.usage;
 
-    // Склад
+    
     document.getElementById('productIngredients').textContent =
       product.ingredients;
   }
 
-  // Обробник кнопки "Додати у кошик"
+  
   const addToCartBtn = document.querySelector('.add-to-cart');
   if (!addToCartBtn) {
     console.warn('Кнопка "Додати у кошик" не знайдена');
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
   });
 
-  // Оновлення лічильника кошика при завантаженні
+  
   updateCartCount();
 });
 

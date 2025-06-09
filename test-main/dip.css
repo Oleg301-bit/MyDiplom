@@ -142,7 +142,7 @@ body {
   box-shadow: 0 0 8px var(--accent-color);
 }
 
-/* Контейнер для бокового меню і каталогу */
+
 .setting-main-content {
   max-width: 1200px;
   margin: 0 auto 40px;
@@ -151,9 +151,9 @@ body {
   gap: 30px;
 }
 
-/* Бокове меню (класифікація + фільтрація) */
+
 .setting-main-content form {
-  flex: 0 0 280px; /* ширина бокового меню */
+  flex: 0 0 280px; 
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -223,7 +223,7 @@ legend {
   color: #111;
 }
 
-/* Каталог товарів праворуч */
+
 .products-grid {
   flex: 1 1 auto;
   max-width: none;
@@ -234,7 +234,7 @@ legend {
   gap: 30px;
 }
 
-/* Картки товарів */
+
 .products-grid > div {
   background-color: #1f1f1f;
   border-radius: 15px;
@@ -269,7 +269,7 @@ legend {
   text-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
 }
 
-/* Назва товару */
+
 .product-name {
   font-size: 1.1rem;
   font-weight: 600;
@@ -282,7 +282,7 @@ legend {
   text-overflow: ellipsis;
 }
 
-/* Текст під формою */
+
 .text-under-form {
   text-align: center;
   font-size: 1.1rem;
@@ -290,7 +290,7 @@ legend {
   margin-bottom: 60px;
 }
 
-/* Footer */
+
 .footer-container {
   background-color: var(--el-bgcolor);
   border-top: 1px solid #444;
