@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById('searchInput');
   const icon = document.getElementById('searchIcon');
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  const sortSelect = document.getElementById('sortSelect');
+  const sortOptions = document.getElementById('sortOptions');
 
-  
+  // Завантаження товарів
   fetch('http://localhost:5500/api/products')
     .then((res) => res.json())
     .then((data) => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch((err) => console.error(err));
 
-
+  // Пошук
   icon?.addEventListener('click', () => {
     input.style.display = input.style.display === 'none' ? 'block' : 'none';
     if (input.style.display === 'block') input.focus();
@@ -27,20 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  input.addEventListener('input', applyFilters);
-
-  
+  input?.addEventListener('input', applyFilters);
   checkboxes.forEach((cb) => cb.addEventListener('change', applyFilters));
-  sortSelect?.addEventListener('change', applyFilters);
 
-  function applyFilters() {
+  // Обробка кліку на сортування
+  sortOptions?.addEventListener('click', function (event) {
+    const target = event.target.closest('.filter-line');
+    if (!target) return;
+
+    const sortValue = target.getAttribute('value');
+    applyFilters(sortValue);
+  });
+
+  function applyFilters(sort = null) {
     let filtered = [...allProducts];
-    const query = input.value.toLowerCase().trim();
+    const query = input?.value.toLowerCase().trim() || '';
 
+    // Пошук
     if (query) {
       filtered = filtered.filter((p) => p.name.toLowerCase().includes(query));
     }
 
+    // Фільтр за категоріями
     const cats = Array.from(checkboxes)
       .filter((cb) => cb.checked)
       .map((cb) => cb.id);
@@ -48,53 +56,23 @@ document.addEventListener('DOMContentLoaded', () => {
       filtered = filtered.filter((p) => cats.includes(p.category));
     }
 
-    const sort = sortSelect?.value;
+    // Сортування
     if (sort) {
-      filtered.sort((a, b) => {
-        if (sort === 'asc') return a.price - b.price;
-        if (sort === 'desc') return b.price - a.price;
-        if (sort === 'rating-asc') return (a.rating || 0) - (b.rating || 0);
-        if (sort === 'rating-desc') return (b.rating || 0) - (a.rating || 0);
-      });
+      if (sort === 'asc') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sort === 'desc') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sort === 'rating-asc') {
+        filtered.sort((a, b) => (a.rating || 0) - (b.rating || 0));
+      } else if (sort === 'rating-desc') {
+        filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+      }
     }
 
     renderProducts(filtered);
   }
-  document.addEventListener('DOMContentLoaded', function () {
-    const sortOptions = document.getElementById('sortOptions');
 
-    sortOptions.addEventListener('click', function (event) {
-      const target = event.target.closest('.filter-line');
-      if (!target) return;
-
-      const sortType = target.dataset.sort;
-      fetchSortedProducts(sortType);
-    });
-
-    function fetchSortedProducts(sortType) {
-      fetch(`/api/products?sort=${sortType}`)
-        .then((res) => res.json())
-        .then((products) => {
-          renderProducts(products);
-        })
-        .catch((err) => console.error('Помилка завантаження товарів:', err));
-    }
-
-    function renderProducts(products) {
-      const container = document.getElementById('productList');
-      container.innerHTML = '';
-
-      products.forEach((product) => {
-        const div = document.createElement('div');
-        div.className = 'product';
-        div.dataset.price = product.price;
-        div.dataset.rating = product.rating;
-        div.textContent = product.name;
-        container.appendChild(div);
-      });
-    }
-  });
-
+  // Відображення товарів
   function renderProducts(products) {
     container.innerHTML = '';
     products.forEach((p) => {
