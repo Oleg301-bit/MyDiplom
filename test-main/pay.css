@@ -21,6 +21,7 @@ body {
   font-family: var(--font-main);
   line-height: 1.6;
   padding-bottom: 50px;
+  font-family: 'Great Vibes', cursive;
 }
 
 .header-contener {
