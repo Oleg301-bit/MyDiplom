@@ -27,7 +27,6 @@ body {
   align-items: center;
   background-color: rgb(32, 32, 32);
   padding: 15px 30px;
-  border-bottom: 1px solid var(--accent-color);
   box-shadow: 0 0 12px rgba(255, 215, 0, 0.15);
 }
 

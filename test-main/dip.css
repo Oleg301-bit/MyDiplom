@@ -142,7 +142,6 @@ body {
   box-shadow: 0 0 8px var(--accent-color);
 }
 
-
 .setting-main-content {
   max-width: 1200px;
   margin: 0 auto 40px;
@@ -151,9 +150,8 @@ body {
   gap: 30px;
 }
 
-
 .setting-main-content form {
-  flex: 0 0 280px; 
+  flex: 0 0 280px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -223,7 +221,6 @@ legend {
   color: #111;
 }
 
-
 .products-grid {
   flex: 1 1 auto;
   max-width: none;
@@ -233,7 +230,6 @@ legend {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
-
 
 .products-grid > div {
   background-color: #1f1f1f;
@@ -269,7 +265,6 @@ legend {
   text-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
 }
 
-
 .product-name {
   font-size: 1.1rem;
   font-weight: 600;
@@ -282,14 +277,12 @@ legend {
   text-overflow: ellipsis;
 }
 
-
 .text-under-form {
   text-align: center;
   font-size: 1.1rem;
   color: #bbb;
   margin-bottom: 60px;
 }
-
 
 .footer-container {
   background-color: var(--el-bgcolor);
@@ -314,6 +307,8 @@ legend {
   font-size: 1rem;
   font-weight: 600;
   user-select: none;
+  color: white;
+  text-decoration: none;
 }
 
 .footer-item a {

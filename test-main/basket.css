@@ -22,7 +22,6 @@ body {
   flex-direction: column;
 }
 
-
 .header-contener {
   display: flex;
   align-items: center;
@@ -62,7 +61,6 @@ body {
 .menu-item:hover {
   color: var(--accent-color);
 }
-
 
 #cart-container {
   margin-top: 15px;
@@ -118,7 +116,6 @@ body {
   font-size: 1rem;
 }
 
-
 .cart-total {
   max-width: 1200px;
   margin: 25px auto 0 auto;
@@ -130,7 +127,6 @@ body {
   text-shadow: 0 0 8px var(--accent-color);
   user-select: none;
 }
-
 
 button {
   display: block;
@@ -156,7 +152,6 @@ button:hover {
   box-shadow: 0 6px 18px rgba(209, 127, 0, 0.9);
 }
 
-
 .footer-container {
   background-color: var(--el-bgcolor);
   border-top: 1px solid #444;
@@ -177,8 +172,9 @@ button:hover {
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
+  color: white;
+  text-decoration: none;
 }
-
 
 @media (max-width: 950px) {
   #cart-container {

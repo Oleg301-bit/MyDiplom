@@ -59,7 +59,6 @@ body {
   color: var(--accent-color);
 }
 
-
 #cart-container {
   margin-top: 15px;
   max-width: 1200px;
@@ -72,7 +71,6 @@ body {
   justify-content: flex-start;
 }
 
-
 .main-block {
   display: flex;
   flex-wrap: wrap;
@@ -82,7 +80,6 @@ body {
   margin: 0 auto 40px;
   margin-top: 20px;
 }
-
 
 .flex-set {
   background-color: var(--card-bg);
@@ -101,7 +98,6 @@ body {
   transform: translateY(-5px);
 }
 
-
 .column-setting {
   flex-shrink: 0;
   font-size: 2.2rem;
@@ -109,7 +105,6 @@ body {
   display: flex;
   align-items: center;
 }
-
 
 .flex-set p {
   margin: 0;
@@ -119,13 +114,11 @@ body {
   line-height: 1.4;
 }
 
-
 .column-button {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
 }
-
 
 #add-review-btn,
 #save-review-btn {
@@ -144,7 +137,6 @@ body {
 #save-review-btn {
   background-color: var(--button-hover-bg);
 }
-
 
 #review-form {
   margin-top: 20px;
@@ -180,4 +172,6 @@ body {
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
+  color: white;
+  text-decoration: none;
 }
